@@ -11,10 +11,19 @@ This is the back end to an ecommerce storefront. Through get, post, put, and del
 ## Table of Contents
 - [License](#license)
 
+- [Usage](#usage)
+
 - [Questions](#questions)
 
 ## License
 This project is licensed under the terms of the MIT License.
+
+## Usage
+Links to walkthrough video:
+
+https://drive.google.com/file/d/141FeAQzPaFNDWn5ogCD6dHa3qklZP1L9/view
+
+https://app.screencastify.com/v3/watch/RfM6lmFO4MrLUTzq9BA6
 
 ## Questions
 
