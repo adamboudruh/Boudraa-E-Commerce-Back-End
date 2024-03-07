@@ -64,7 +64,7 @@ router.delete('/:id', async (req, res) => { //DONE
   console.log('Deleting category');
   try{
     const deleteID = req.params.id;
-    if (await Category.findByPk(deleteID)) {
+    if (await Category.findByPk(deleteID)) { //if a category with the provided id actually exists, then attempt to delete it, if not throw 404 error
       await Product.destroy({
         where: {
           category_id: deleteID
