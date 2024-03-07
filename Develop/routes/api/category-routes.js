@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
   } catch (err) {res.status(500).json({ error: `Error retrieving category: ${err}`});}
 });
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res) => { //DONE
   // create a new category
   console.log('Creating category');
   try{
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
   } catch (err) {res.status(500).json({ error: `Error creating category: ${err}`})}
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => { //DONE
   // update a category by its `id` value
   console.log('Updating category');
   try{
@@ -59,13 +59,18 @@ router.put('/:id', async (req, res) => {
   } catch (err) {res.status(500).json({ error: `Error updating Category: ${err}`});}
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => { //DONE
   // delete a category by its `id` value
   console.log('Deleting category');
   try{
     const deleteID = req.params.id;
     if (await Category.findByPk(deleteID)) {
-      const deleteCat = await Category.destroy({
+      await Product.destroy({
+        where: {
+          category_id: deleteID
+        }
+      })
+      await Category.destroy({
         where: {
           id: deleteID
         }
